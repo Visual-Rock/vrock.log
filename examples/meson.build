@@ -1,8 +1,8 @@
 if get_option('examples')
 
-#  Example
+# Logger Example
 example_ = executable(
-    'example_', 'example_.cpp',
+    'example_logger', 'example_logger.cpp',
     dependencies: loglib_dep
 )
 

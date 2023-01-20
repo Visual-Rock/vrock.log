@@ -1,9 +1,9 @@
 src = [
-    ''
+    'Logger.cpp'
 ]
 
 header = [
-    ''
+    '../include/vrock/log/Logger.hpp'
 ]
 
 public_header = include_directories('../include')
