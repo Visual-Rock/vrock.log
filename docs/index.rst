@@ -6,7 +6,7 @@
 Welcome to vrock.log's documentation!
 =======================================
 
-The vrock.log module is a logging interface for the vrock libs collection. 
+The vrock.log module is a logging interface for the vrock libs collection it uses the spdlog library under the hood.
 
 .. toctree::
    :glob:

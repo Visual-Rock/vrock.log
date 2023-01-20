@@ -9,6 +9,7 @@ header = [
 public_header = include_directories('../include')
 
 spdlog_dep = dependency('spdlog', fallback: ['spdlog', 'spdlog_dep'])
+utilslib_dep = dependency('vrockutils', fallback: ['vrockutils', 'vrockutils_dep'])
 
 loglib = static_library(meson.project_name(), src,
     include_directories: public_header,
@@ -18,7 +19,7 @@ loglib = static_library(meson.project_name(), src,
 loglib_dep = declare_dependency(
     include_directories: public_header,
     link_with: loglib,
-    dependencies: [ spdlog_dep ]
+    dependencies: [ spdlog_dep, utilslib_dep ]
 )
 set_variable(meson.project_name() + '_dep', loglib_dep)
 
