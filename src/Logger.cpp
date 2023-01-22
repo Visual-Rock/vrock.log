@@ -25,4 +25,25 @@ namespace vrock::log {
         log->set_level((spdlog::level::level_enum)cfg.level);
         log->flush_on((spdlog::level::level_enum)cfg.level);
     }
+
+    std::unordered_map<std::string, std::shared_ptr<Logger>> logger = {}; 
+
+    std::shared_ptr<Logger> create_logger(LoggerConfig cfg) 
+    {
+        logger[cfg.name] = std::make_shared<Logger>(cfg);  
+        return logger[cfg.name]; 
+    }
+
+    std::shared_ptr<Logger> create_logger(std::string n) 
+    {
+        logger[n] = std::make_shared<Logger>(n);  
+        return logger[n]; 
+    }
+    
+    std::shared_ptr<Logger> get_logger(std::string name) 
+    {
+        if (logger.find(name) != logger.end())
+            return logger[name];
+        return create_logger(name);
+    }
 }

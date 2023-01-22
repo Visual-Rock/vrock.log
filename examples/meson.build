@@ -18,4 +18,10 @@ example_ = executable(
     dependencies: loglib_dep
 )
 
+ # Logger Manager Example
+example_ = executable(
+    'example_logger_manager', 'example_logger_manager.cpp',
+    dependencies: loglib_dep
+)
+
 endif
