@@ -33,6 +33,10 @@ namespace vrock::log {
         /// @brief add a colored console sink
         /// @return return this LoggerConfig
         LoggerConfig add_console_colored();
+        
+        /// @brief add a daily file sink
+        /// @return return this LoggerConfig
+        LoggerConfig add_daily_file(std::string file, uint16_t amount = 5);
     public:
         /// @brief name of the Logger
         std::string name;

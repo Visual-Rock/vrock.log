@@ -2,7 +2,10 @@
 
 int main()
 {
-    auto cfg = vrock::log::LoggerConfig("LOGGER").set_log_level(vrock::log::Info).add_console_colored();
+    auto cfg = vrock::log::LoggerConfig("LOGGER")
+                    .set_log_level(vrock::log::Info)
+                    .add_console_colored()
+                    .add_daily_file("log.txt");
 
     auto logger = vrock::log::Logger(cfg);
 
