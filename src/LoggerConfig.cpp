@@ -20,6 +20,24 @@ namespace vrock::log {
         return *this;
     }
 
+    LoggerConfig LoggerConfig::add_colored_error()
+    {
+        cfg.push_back(std::make_shared<spdlog::sinks::stderr_color_sink_mt>());
+        return *this;
+    }
+
+    LoggerConfig LoggerConfig::add_ansi_console_colored()
+    {
+        cfg.push_back(std::make_shared<spdlog::sinks::ansicolor_stdout_sink_mt>());
+        return *this;
+    }
+
+    LoggerConfig LoggerConfig::add_ansi_colored_error()
+    {
+        cfg.push_back(std::make_shared<spdlog::sinks::ansicolor_stderr_sink_mt>());
+        return *this;
+    }
+
     LoggerConfig LoggerConfig::add_daily_file(std::string file, uint16_t amount)
     {
         cfg.push_back(std::make_shared<spdlog::sinks::daily_file_sink_mt>(file, 23, 59, false, amount));
