@@ -6,6 +6,7 @@
 #include <spdlog/spdlog.h>
 
 #include "LoggerConfig.hpp"
+#include "ByteArrayFormatter.hpp"
 
 namespace vrock::log {
     class Logger {
