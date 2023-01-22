@@ -1,9 +1,11 @@
 src = [
-    'Logger.cpp'
+    'Logger.cpp',
+    'LoggerConfig.cpp'
 ]
 
 header = [
-    '../include/vrock/log/Logger.hpp'
+    '../include/vrock/log/Logger.hpp',
+    '../include/vrock/log/LoggerConfig.hpp'
 ]
 
 public_header = include_directories('../include')
