@@ -6,4 +6,10 @@ example_ = executable(
     dependencies: loglib_dep
 )
 
+# Logger Config Example
+example_ = executable(
+    'example_logger_config', 'example_logger_config.cpp',
+    dependencies: loglib_dep
+)
+
 endif
