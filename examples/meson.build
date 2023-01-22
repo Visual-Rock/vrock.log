@@ -12,4 +12,10 @@ example_ = executable(
     dependencies: loglib_dep
 )
 
+ # Byte Array Example
+example_ = executable(
+    'example_byte_array', 'example_byte_array.cpp',
+    dependencies: loglib_dep
+)
+
 endif
