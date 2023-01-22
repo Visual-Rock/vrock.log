@@ -54,6 +54,13 @@ namespace vrock::log {
         /// @param amount amount of files to keep
         /// @return return this LoggerConfig
         LoggerConfig add_daily_file(std::string file, uint16_t amount = 5);
+
+        /// @brief add rotating file sink
+        /// @param file filename of the logfiles
+        /// @param file_size filesize (default 4MB)
+        /// @param amount amount of files
+        /// @return return this LoggerConfig
+        LoggerConfig add_rotating_file(std::string file, size_t file_size = 4194304, uint16_t amount = 5);
     public:
         /// @brief name of the Logger
         std::string name;
