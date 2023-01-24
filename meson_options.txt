@@ -1,3 +1,2 @@
-option('tests', type: 'boolean', value: false, description: 'build tests for vrock.log')
 option('examples', type: 'boolean', value: false, description: 'build examples for vrock.log')
 option('docs', type: 'boolean', value: false, description: 'build docs for vrock.log')
