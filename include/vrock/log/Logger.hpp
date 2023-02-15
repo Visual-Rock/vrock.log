@@ -5,30 +5,32 @@
 
 #include <spdlog/spdlog.h>
 
-#include "LoggerConfig.hpp"
 #include "ByteArrayFormatter.hpp"
+#include "LoggerConfig.hpp"
 
-namespace vrock::log {
-    class Logger {
+namespace vrock::log
+{
+    class Logger
+    {
     public:
-        Logger(std::string n);
-        Logger(LoggerConfig cfg);
+        explicit Logger( const std::string& n );
+        explicit Logger( LoggerConfig cfg );
 
-        std::shared_ptr<spdlog::logger> log;        
+        std::shared_ptr<spdlog::logger> log;
     };
 
     /// @brief creates a logger with a given config
     /// @param cfg config for the logger
     /// @return shared pointer containing the logger
-    std::shared_ptr<Logger> create_logger(LoggerConfig cfg);
+    auto create_logger( const LoggerConfig &cfg ) -> std::shared_ptr<Logger>;
 
     /// @brief creates a logger with a given name
     /// @param n name of the logger
     /// @return shared pointer containing the logger
-    std::shared_ptr<Logger> create_logger(std::string n);
+    auto create_logger( const std::string &n ) -> std::shared_ptr<Logger>;
 
     /// @brief gets the logger with the given name. if the logger is not found it creates one.
     /// @param name name of the logger
     /// @return shared pointer containing the logger
-    std::shared_ptr<Logger> get_logger(std::string name);
-}
+    auto get_logger( const std::string &name ) -> std::shared_ptr<Logger>;
+} // namespace vrock::log

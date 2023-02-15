@@ -1,10 +1,10 @@
 #include "vrock/log/Logger.hpp"
 
-int main()
+auto main( ) -> int
 {
-    auto logger = vrock::log::Logger("LOGGER");
+    auto logger = vrock::log::Logger( "LOGGER" );
 
-    logger.log->info("Hello, World!");
+    logger.log->info( "Hello, World!" );
 
     return 0;
 }
